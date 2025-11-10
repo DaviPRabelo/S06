@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "dd11e8c4-2b9b-4ab9-9d7e-39eac1ae8c68",
+		"name": "Aula-Postman",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49959748",
+		"_collection_link": "https://daviprabelo-7631003.postman.co/workspace/DaviPR's-Team's-Workspace~edb20d87-67c9-4e46-88a3-daefdbda8f8c/collection/49959748-dd11e8c4-2b9b-4ab9-9d7e-39eac1ae8c68?action=share&source=collection_link&creator=49959748"
+	},
+	"item": [
+		{
+			"name": "Localiza pokemon com sucesso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/totodile",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"totodile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Não localiza pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/a",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint falho",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

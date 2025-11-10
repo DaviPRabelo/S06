@@ -36,7 +36,7 @@ Siga os passos abaixo para clonar, instalar as dependências e executar os teste
 
 Antes de começar, você precisará ter o [Node.js](https://nodejs.org/) (versão 18 ou superior) instalado em sua máquina.
 
-# Instale o cypress-mochawesome-reporter
+### Instale o cypress-mochawesome-reporter
 
 npm install mochawesome mochawesome-merge mochawesome-report-generator
 
@@ -44,7 +44,7 @@ npm install mochawesome mochawesome-merge mochawesome-report-generator
 
 npm install --save-dev cypress-mochawesome-reporter
 
-# Adicione em seu cypress.config.js
+### Adicione em seu cypress.config.js
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
@@ -56,17 +56,17 @@ module.exports = defineConfig({
   },
 });
 
-# No arquivo E2E adicione
+### No arquivo E2E adicione
 
 import 'cypress-mochawesome-reporter/register'
 
-# Faça o clone dos testes
+### Faça o clone dos testes
 
 git clone https://github.com/DaviPRabelo/S06.git
 
-# No terminal bash digite o comando
+### No terminal bash digite o comando
 
 ./node_modules/.bin/cypress run --spec 'caminho do arquivo'
 
 
-# Dentro da pasta cypress/reports, rode o index.html para analisar o relatório de testes feito
+### Dentro da pasta cypress/reports, rode o index.html para analisar o relatório de testes feito

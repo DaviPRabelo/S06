@@ -1,0 +1,11 @@
+1. Quantas suítes de testes você desenvolveu? Uma. No contexto do Postman, a "Collection" contendo os cenários atua como uma suíte de testes agrupada.
+
+2. Os testes desenvolvidos são manuais ou automatizados? Automatizados. As validações são feitas via scripts na aba "Tests", que decidem se o teste passou ou falhou sem intervenção humana na análise da resposta.
+
+3. Onde os testes se localizam na pirâmide apresentada? Na camada de Integração. Eles testam a comunicação da API sem envolver a interface gráfica.
+
+4. Os testes desenvolvidos são funcionais ou não-funcionais? Funcionais. O foco foi validar o comportamento da API e não aspectos de performance ou carga.
+
+5. Alguns dos testes desenvolvidos são testes Fim-a-Fim (End-To-End)? Não. Os testes são isolados e independentes. Um teste E2E envolveria um fluxo completo, o que não se aplica a esta API pública de leitura.
+
+6. O que se deve fazer para que os testes desenvolvidos funcionem em modo regressão? É necessário integrar a execução desta coleção em uma esteira de CI/CD, como Jenkins ou GitHub Actions. Assim, os testes rodariam automaticamente a cada alteração no código para garantir que nada foi quebrado.

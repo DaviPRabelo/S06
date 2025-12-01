@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "4a3e0747-55a9-47f4-8a2d-9627c937c230",
+		"name": "Atividade2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49959748",
+		"_collection_link": "https://daviprabelo-7631003.postman.co/workspace/DaviPR's-Team's-Workspace~edb20d87-67c9-4e46-88a3-daefdbda8f8c/collection/49959748-4a3e0747-55a9-47f4-8a2d-9627c937c230?action=share&source=collection_link&creator=49959748"
+	},
+	"item": [
+		{
+			"name": "Lista2",
+			"item": [
+				{
+					"name": "times",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Data array exists\", function () {\r",
+									"    pm.expect(jsonData).to.have.property('data');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"There are 30 NBA teams now, and 15 old franchises\", function () {\r",
+									"    pm.expect(jsonData.data.length).to.eql(45);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.balldontlie.io/v1/teams/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"balldontlie",
+								"io"
+							],
+							"path": [
+								"v1",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogador",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"First name is LeBron\", function () {\r",
+									"    pm.expect(jsonData.data.first_name).to.eql(\"LeBron\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Last name is James\", function () {\r",
+									"    pm.expect(jsonData.data.last_name).to.eql(\"James\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.balldontlie.io/v1/players/237",
+							"protocol": "https",
+							"host": [
+								"api",
+								"balldontlie",
+								"io"
+							],
+							"path": [
+								"v1",
+								"players",
+								"237"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bulls",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"City is Chicago\", function () {\r",
+									"    pm.expect(jsonData.data.city).to.eql(\"Chicago\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Conference is East\", function () {\r",
+									"    pm.expect(jsonData.data.conference).to.eql(\"East\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.balldontlie.io/v1/teams/5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"balldontlie",
+								"io"
+							],
+							"path": [
+								"v1",
+								"teams",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Response contains list of games\", function () {\r",
+									"    pm.expect(jsonData.data).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Games list is not empty\", function () {\r",
+									"    pm.expect(jsonData.data.length).to.be.above(0);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.balldontlie.io/v1/games",
+							"protocol": "https",
+							"host": [
+								"api",
+								"balldontlie",
+								"io"
+							],
+							"path": [
+								"v1",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IdJogadorNaoExiste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.balldontlie.io/v1/players/99999999",
+							"protocol": "https",
+							"host": [
+								"api",
+								"balldontlie",
+								"io"
+							],
+							"path": [
+								"v1",
+								"players",
+								"99999999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteLebron",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is an error (404 or 405)\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([404, 405]);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response is not success\", function () {\r",
+									"    pm.response.to.not.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.balldontlie.io/v1/players/237",
+							"protocol": "https",
+							"host": [
+								"api",
+								"balldontlie",
+								"io"
+							],
+							"path": [
+								"v1",
+								"players",
+								"237"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "d71fa738-2f6c-4fc7-8a28-2f0b61f87041",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "Authorization",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
